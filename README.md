@@ -8,11 +8,11 @@ Its tested using the Tnt VCP emulator, one end being fed by the python app and o
 
 # Usage 
 ./MtdataApp -p port
+
 e.g. ./MtdataApp -p /dev/tnt2
 
 # Build
 Clone the complete repo to a directory and give following commands-
-$ make clean
-$ make all
+$ make clean; make all
 
 The MtdataApp executable will get generated in the CWD, no special packages necessary to be instatted, its a completely self contained code.
