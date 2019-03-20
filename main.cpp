@@ -6,7 +6,7 @@
 #include <iostream>
 #include <unistd.h>
 
-void ShowUsage(char *argv[]) { std::cout << "Usage: %s -p port" << argv[0] << std::endl; }
+void ShowUsage(char *argv[]) { std::cout << "Usage: "<<argv[0]<<" -p port" << std::endl; }
 
 int main(int argc, char *argv[]) {
 // command line parsing
