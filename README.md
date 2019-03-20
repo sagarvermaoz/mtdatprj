@@ -11,7 +11,7 @@ Its tested using the Tnt VCP emulator, one end being fed by the python app and o
 e.g. ./MtdataApp -p /dev/tnt2
 
 # Build
-clone the complete repo to a directory and give following commands-
+Clone the complete repo to a directory and give following commands-
 $ make clean
 $ make all
 
