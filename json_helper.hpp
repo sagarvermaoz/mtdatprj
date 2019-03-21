@@ -9,6 +9,8 @@
 #include <algorithm>
 #include <iostream>
 #include <sstream>
+#include <stdio.h>
+#include <stdlib.h>
 #include <vector>
 
 namespace mtdata_prj {
@@ -55,9 +57,10 @@ public:
     }
 
 */
-  void GetJsonFormattedOutput(const char *inp_buf) {
+  void GetJsonFormattedOutput(const char *inp_buf, int inp_buf_size) {
     // get std string
-    std::string inp_buf_string(inp_buf);
+    std::string inp_buf_string;
+    inp_buf_string.assign(inp_buf, inp_buf_size);
 
     // remove all :, \, /
     std::replace(inp_buf_string.begin(), inp_buf_string.end(), ':', ' ');

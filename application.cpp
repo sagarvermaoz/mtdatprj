@@ -10,19 +10,13 @@
 #include <unistd.h>
 
 namespace mtdata_prj {
+
 void Application::Run(const char *com_port) {
   std::cout << "Run MtData application" << std::endl;
   // start the MtDataAppThread thread and pass it the serial parameters
-  std::thread mtdata_thread(MtDataAppThread, com_port);
-  mtdata_thread.detach();
+  // std::thread mtdata_thread(MtDataAppThread, com_port);
+  // mtdata_thread.detach();
 
-  while (true) {
-    // Ideally we should never return
-  }
-}
-
-void Application::MtDataAppThread(const char *com_port) {
-  std::cout << "Running MtData app thread" << std::endl;
   // serial interface object
   auto serial_interface = new serial_interface::SerialInterface(com_port, 9600);
 
@@ -48,7 +42,7 @@ void Application::MtDataAppThread(const char *com_port) {
     // read latest serial data
     bytes_read = serial_interface->Read(read_buffer, 2048); // Read
     // just call the below method to get formatted output
-    json_helper->GetJsonFormattedOutput(read_buffer);
+    json_helper->GetJsonFormattedOutput(read_buffer, bytes_read);
     std::memset(read_buffer, 0, 2048);
     sleep(delay_time_in_sec);
   }
