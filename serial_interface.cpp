@@ -1,6 +1,6 @@
 /*
  * Interface file source code for accessing serial port hardware peripheral
-*/
+ */
 
 #include "serial_interface.hpp"
 #include <cstring>
@@ -13,8 +13,8 @@
 namespace mtdata_prj {
 namespace serial_interface {
 /*
-* Ctor
-*/
+ * Ctor
+ */
 SerialInterface::SerialInterface(const char *com_port, int baudrate)
     : baudrate_{baudrate} {
 
@@ -65,10 +65,17 @@ int SerialInterface::Read(char *read_buffer, int read_size) {
 
 void SerialInterface::Close() {
   auto ret = close(serial_handle_);
-  if(ret != -1){
-  std::cout << "SerialInterface::Close[OK]" << std::endl;
-  }else{
-  std::cout << "SerialInterface::Close[FAIL]" << std::endl;
+  if (ret != -1) {
+    std::cout << "SerialInterface::Close[OK]" << std::endl;
+  } else {
+    std::cout << "SerialInterface::Close[FAIL]" << std::endl;
+  }
+}
+
+void SerialInterface::Flush() {
+  auto ret = tcflush(serial_handle_, TCIFLUSH);
+  if (ret == -1) {
+    std::cout << "SerialInterface::Flush[FAIL]" << std::endl;
   }
 }
 

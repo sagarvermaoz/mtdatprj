@@ -1,6 +1,7 @@
 /*
- * Interface file base class header for accessing serial port hardware peripheral
-*/
+ * Interface file base class header for accessing serial port hardware
+ * peripheral
+ */
 
 #pragma once
 
@@ -42,6 +43,12 @@ public:
    *  @return none
    */
   virtual void Close() = 0;
+
+  /** @brief Flush the serial peripheral
+   *  @param none
+   *  @return none
+   */
+  virtual void Flush() = 0;
 };
 
 } // namespace serial_interface

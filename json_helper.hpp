@@ -1,6 +1,7 @@
 /*
- * Convenient helper which deals with Parson JSON library and provides JSON formatted output
-*/
+ * Convenient helper which deals with Parson JSON library and provides JSON
+ * formatted output
+ */
 
 #pragma once
 
@@ -16,7 +17,7 @@ namespace json_helper {
 class JsonHelper {
 public:
   /** @brief Make Json From Buffer
-   *  @param none
+   *  @param const char *inp_buf
    *  @return
    */
   /*
@@ -57,6 +58,7 @@ public:
   void GetJsonFormattedOutput(const char *inp_buf) {
     // get std string
     std::string inp_buf_string(inp_buf);
+
     // remove all :, \, /
     std::replace(inp_buf_string.begin(), inp_buf_string.end(), ':', ' ');
     std::replace(inp_buf_string.begin(), inp_buf_string.end(), '\\', ' ');

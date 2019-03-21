@@ -1,6 +1,6 @@
 /*
  * Interface file class header for accessing serial port hardware peripheral
-*/
+ */
 
 #pragma once
 
@@ -49,6 +49,12 @@ public:
    *  @return none
    */
   void Close();
+
+  /** @brief Flush the serial peripheral
+   *  @param none
+   *  @return none
+   */
+  void Flush();
 
 private:
   int baudrate_;

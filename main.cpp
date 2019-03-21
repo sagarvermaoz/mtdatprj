@@ -1,15 +1,17 @@
 /*
  * main routine and fetching command line option
-*/
+ */
 
 #include "application.hpp"
 #include <iostream>
 #include <unistd.h>
 
-void ShowUsage(char *argv[]) { std::cout << "Usage: "<<argv[0]<<" -p port" << std::endl; }
+void ShowUsage(char *argv[]) {
+  std::cout << "Usage: " << argv[0] << " -p port" << std::endl;
+}
 
 int main(int argc, char *argv[]) {
-// command line parsing
+  // command line parsing
   int opt;
   char *com_port;
 
@@ -33,8 +35,9 @@ int main(int argc, char *argv[]) {
     std::cout << "Expected argument after options" << std::endl;
     return 0;
   }
-  
+
   // pass the control to the mtdata applicaion
-  mtdata_prj::Run(com_port);
+  std::cout << "Passing control to MtData application" << std::endl;
+  mtdata_prj::Application::Run(com_port);
   return 0;
 }
