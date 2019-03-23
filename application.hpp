@@ -16,6 +16,13 @@ public:
    *  @return none
    */
   static void Run(const char *com_port);
+
+private:
+  /** @brief Run the MT project application thread
+   *  @param const char* com_port
+   *  @return none
+   */
+  static void MtDataAppThread(const char *com_port);
 };
 
 } // namespace mtdata_prj
