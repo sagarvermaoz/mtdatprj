@@ -1,4 +1,4 @@
-# Mtdatprj
+# Mtdataprj
 MtData assigment
 
 # Brief
